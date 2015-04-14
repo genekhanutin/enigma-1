@@ -1,4 +1,10 @@
+require_relative 'rotator'
+
 class Encryptor
+  def initialize(rotator = Rotator.new, message = "")
+    @rotator = rotator
+    @messag  = message
+  end
 end
 
 # instantiate new instance of rotator class
