@@ -18,6 +18,27 @@ class EncryptorTest < Minitest::Test
   def test_it_rotates_a_letter_by_rotation_value_a
     encryptor = Encryptor.new(rotator, 'd')
 
-    assert_equal 'n', encryptor.encrypt_message
+    assert_equal 'o', encryptor.encrypt_message
+  end
+
+  def test_it_rotates_a_letter_by_rotation_value_b
+    skip
+    encryptor = Encryptor.new(rotator, 'o')
+
+    assert_equal 'o', encryptor.encrypt_message
+  end
+
+  def test_it_rotates_a_letter_by_rotation_value_c
+    skip
+    encryptor = Encryptor.new(rotator, 'd')
+
+    assert_equal 'o', encryptor.encrypt_message
+  end
+
+  def test_it_rotates_a_letter_by_rotation_value_d
+    skip
+    encryptor = Encryptor.new(rotator, 'd')
+
+    assert_equal 'o', encryptor.encrypt_message
   end
 end

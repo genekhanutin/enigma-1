@@ -26,6 +26,22 @@ class Rotator
   end
 
   def rotation_d
-    key.join[3..4].to_i + date[3].to_i 
+    key.join[3..4].to_i + date[3].to_i
   end
+
+  def rotations
+    [rotation_a, rotation_b, rotation_c, rotation_d]
+  end
+end
+
+rot = Rotator.new
+
+rot.rotations
+
+message = "hello world"
+
+message.chars.each_slice(4).map do |chunk|
+  chunk.map.with_index do |char, index|
+  rot.character_map.index(char) + rot.rotations[index]
+ end
 end
