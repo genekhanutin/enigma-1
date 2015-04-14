@@ -33,15 +33,3 @@ class Rotator
     [rotation_a, rotation_b, rotation_c, rotation_d]
   end
 end
-
-rot = Rotator.new
-
-rot.rotations
-
-message = "hello world"
-
-message.chars.each_slice(4).map do |chunk|
-  chunk.map.with_index do |char, index|
-  rot.character_map.index(char) + rot.rotations[index]
- end
-end

@@ -9,37 +9,23 @@ class Encryptor
   end
 
   def encrypt_message
-    # rotation_tracker = -4
-    # message.chars.map do |char|
-    #   rotator.character_map.index(char) + rotator.rotations[rotation_tracker]
-    #   rotation_tracker -= 1
-    # end
-    encrypt_value = rotator.character_map.index(message) + rotator.rotation_a
-    rotator.character_map[encrypt_value % 39]
-   end
+    encrypt_value.map do |num|
+      rotator.character_map[num]
+    end.join
+  end
 
-   def encrypt_value
+  def encrypt_value
     message.chars.each_slice(4).map do |slice|
       slice.map.with_index do |letter, index|
-        rotator.character_map.index(letter) + rotator.rotations[index]
+        value_on_character_map(letter,index)
       end
-    end
-   end
+    end.flatten
+  end
+
+  def value_on_character_map(letter, index)
+    (rotator.character_map.index(letter) + rotator.rotations[index]) % 39
+  end
 end
-
-rot = Rotator.new
-
-rot.rotations
-
-message = "hello world"
-
-message.chars.each_slice(4).map do |slice|
-  slice.map.with_index do |letter, index|
-  rot.character_map.index(letter) + rot.rotations[index]
- end
-end
-
-
 # instantiate new instance of rotator class
 # use its rotation methods and character map to do encryption
 

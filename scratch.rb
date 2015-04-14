@@ -22,4 +22,22 @@ message.chars.each_slice(4) do |chunk|
 end
 end
 
+rot = Rotator.new
 
+rot.rotations
+
+message = "hello world"
+
+message.chars.each_slice(4).map do |chunk|
+  chunk.map.with_index do |char, index|
+  rot.character_map.index(char) + rot.rotations[index]
+ end
+end
+
+    # # rotation_tracker = -4
+    # # message.chars.map do |char|
+    # #   rotator.character_map.index(char) + rotator.rotations[rotation_tracker]
+    # #   rotation_tracker -= 1
+    # # end
+    # encrypt_value = rotator.character_map.index(message) + rotator.rotation_a
+    # rotator.character_map[encrypt_value % 39]

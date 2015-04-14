@@ -15,30 +15,45 @@ class EncryptorTest < Minitest::Test
     assert Encryptor.new
   end
 
-  def test_it_rotates_a_letter_by_rotation_value_a
-    encryptor = Encryptor.new(rotator, 'd')
+  def test_it_encrypts_one_letter
+    encryptor = Encryptor.new(rotator, 'h')
 
-    assert_equal 'o', encryptor.encrypt_message
+    assert_equal 's', encryptor.encrypt_message
   end
 
-  def test_it_rotates_a_letter_by_rotation_value_b
-    skip
-    encryptor = Encryptor.new(rotator, 'o')
+  def test_it_encrypts_two_letters
+    encryptor = Encryptor.new(rotator, 'he')
 
-    assert_equal 'o', encryptor.encrypt_message
+    assert_equal 'sv', encryptor.encrypt_message
   end
 
-  def test_it_rotates_a_letter_by_rotation_value_c
-    skip
-    encryptor = Encryptor.new(rotator, 'd')
+  def test_it_encrypts_three_letters
+    encryptor = Encryptor.new(rotator, 'hel')
 
-    assert_equal 'o', encryptor.encrypt_message
+    assert_equal 'svz', encryptor.encrypt_message
   end
 
-  def test_it_rotates_a_letter_by_rotation_value_d
-    skip
-    encryptor = Encryptor.new(rotator, 'd')
+  def test_it_encrypts_four_letters
+    encryptor = Encryptor.new(rotator, 'hell')
 
-    assert_equal 'o', encryptor.encrypt_message
+    assert_equal 'svz2', encryptor.encrypt_message
+  end
+
+  def test_it_encrypts_five_letter_word
+    encryptor = Encryptor.new(rotator, 'hello')
+
+    assert_equal 'svz2z', encryptor.encrypt_message
+  end
+
+  def test_it_encrypts_phrase_with_space
+    encryptor = Encryptor.new(rotator, 'hello world')
+
+    assert_equal 'svz2zo 522r', encryptor.encrypt_message
+  end
+
+  def test_it_encrypts_phrase_with_spaces_and_number
+    encryptor = Encryptor.new(rotator, 'hello world 1')
+
+    assert_equal 'svz2zo 522ro,', encryptor.encrypt_message
   end
 end
