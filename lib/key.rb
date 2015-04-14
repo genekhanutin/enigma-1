@@ -10,8 +10,8 @@ class Key
   def generate_key
     (numbers * 5).sample(5)
   end
-
-
 end
+
+# Key.new.generate_key.join[0..1].to_i
 
 
