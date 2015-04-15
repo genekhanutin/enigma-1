@@ -8,7 +8,7 @@ class Encrypt
   def run
     @encryptor.encrypt_message
     File.write(ARGV[1], @encryptor.encrypt_message)
-    puts "Created #{ARGV[1]} with key #{@encryptor.rotator.key} and date offset #{@encryptor.rotator.date}"
+    puts "Created #{ARGV[1]} with key #{@encryptor.rotator.key.join} and date #{Time.now.strftime('%m%d%y')}"
   end
 end
 

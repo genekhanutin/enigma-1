@@ -23,6 +23,6 @@ class DateTest < Minitest::Test
   def test_it_returns_the_last_four_integers_of_date_squared_as_string
     offset = Date.new('041315')
 
-    assert_equal '9225', offset.last_four_numbers_of_squared_date
+    assert_equal '9225', offset.last_four_of_squared_date
   end
 end
