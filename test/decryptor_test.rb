@@ -6,7 +6,7 @@ class DecryptorTest < Minitest::Test
   attr_reader :test_key, :test_date
 
   def setup
-    @test_key  = [4,1,5,1,2]
+    @test_key  = "41512"
     @test_date = Date.new('020315').last_four_of_squared_date
   end
 

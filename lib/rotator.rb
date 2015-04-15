@@ -14,19 +14,19 @@ class Rotator
   end
 
   def rotation_a
-    key.join[0..1].to_i + date[0].to_i
+    key[0..1].to_i + date[0].to_i
   end
 
   def rotation_b
-    key.join[1..2].to_i + date[1].to_i
+    key[1..2].to_i + date[1].to_i
   end
 
   def rotation_c
-    key.join[2..3].to_i + date[2].to_i
+    key[2..3].to_i + date[2].to_i
   end
 
   def rotation_d
-    key.join[3..4].to_i + date[3].to_i
+    key[3..4].to_i + date[3].to_i
   end
 
   def rotations

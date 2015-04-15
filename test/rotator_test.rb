@@ -9,7 +9,7 @@ class RotatorTest < Minitest::Test
   end
 
   def test_rotation_a_returns_total_rotation_value_for_a
-    test_key  = [4,1,5,1,2]
+    test_key  = "41512"
     test_date = Date.new('020315').last_four_of_squared_date
     rotator   = Rotator.new(test_key, test_date)
 
@@ -17,7 +17,7 @@ class RotatorTest < Minitest::Test
   end  
 
   def test_rotation_b_returns_total_rotation_value_for_b
-    test_key  = [4,1,5,1,2]
+    test_key  = "41512"
     test_date = Date.new('020315').last_four_of_squared_date
     rotator   = Rotator.new(test_key, test_date)
 
@@ -25,7 +25,7 @@ class RotatorTest < Minitest::Test
   end  
 
   def test_rotation_c_returns_total_rotation_value_for_c
-    test_key  = [4,1,5,1,2]
+    test_key  = "41512"
     test_date = Date.new('020315').last_four_of_squared_date
     rotator   = Rotator.new(test_key, test_date)
 
@@ -33,7 +33,7 @@ class RotatorTest < Minitest::Test
   end
 
   def test_rotation_c_returns_total_rotation_value_for_d
-    test_key  = [4,1,5,1,2]
+    test_key  = "41512"
     test_date = Date.new('020315').last_four_of_squared_date
     rotator   = Rotator.new(test_key, test_date)
 
@@ -41,7 +41,7 @@ class RotatorTest < Minitest::Test
   end
 
   def test_rotations_returns_array_of_rotation_values
-    test_key  = [4,1,5,1,2]
+    test_key  = "41512"
     test_date = Date.new('020315').last_four_of_squared_date
     rotator   = Rotator.new(test_key, test_date)
 

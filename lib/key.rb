@@ -8,7 +8,7 @@ class Key
   end
 
   def generate_key
-    (numbers * 5).sample(5)
+    (numbers * 5).sample(5).join
   end
 end
 
