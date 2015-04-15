@@ -1,23 +1,15 @@
-require 'encryptor'
+require_relative 'encryptor'
 
 class Encrypt
-
   def initialize
-    @encryptor = Encryptor.new[ARGV]
+    @encryptor = Encryptor.new(File.read(ARGV[0]))
   end
 
-  def encrypted_message
+  def run
     @encryptor.encrypt_message
-  end
-
-  def encrypt
-    file = File.open(ARGV[1], "w")
-    file.write "#{encrypted_message}"
-  end
-
-  def message_to_console
-    puts "Created 'encrypted.txt' with the #{key of some kind}  and date #{}"
+    File.write(ARGV[1], @encryptor.encrypt_message)
+    puts "Created #{ARGV[1]} with key #{@encryptor.rotator.key} and date offset #{@encryptor.rotator.date}"
   end
 end
 
-Encrypt.new.message_to_console
+Encrypt.new.run

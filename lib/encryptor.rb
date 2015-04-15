@@ -3,7 +3,7 @@ require_relative 'rotator'
 class Encryptor
   attr_reader :rotator, :message
 
-  def initialize(rotator = Rotator.new, message = "")
+  def initialize(message = "", rotator = Rotator.new)
     @rotator  = rotator
     @message  = message
   end
