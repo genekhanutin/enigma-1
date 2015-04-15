@@ -4,9 +4,9 @@ require_relative 'date'
 class Rotator
   attr_reader :key, :date
 
-  def initialize(key = Key.new.generate_key, date = Date.new.last_four_of_squared_date)
+  def initialize(key = Key.new.generate_key, date)
     @key  = key
-    @date = date
+    @date = Date.new(date).last_four_of_squared_date
   end
 
   def character_map
@@ -14,19 +14,20 @@ class Rotator
   end
 
   def rotation_a
-    key[0..1].to_i + date[0].to_i
+    # require 'pry' ; binding.pry
+    key[0..1].join.to_i + date[0].to_i
   end
 
   def rotation_b
-    key[1..2].to_i + date[1].to_i
+    key[1..2].join.to_i + date[1].to_i
   end
 
   def rotation_c
-    key[2..3].to_i + date[2].to_i
+    key[2..3].join.to_i + date[2].to_i
   end
 
   def rotation_d
-    key[3..4].to_i + date[3].to_i
+    key[3..4].join.to_i + date[3].to_i
   end
 
   def rotations

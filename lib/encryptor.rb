@@ -3,7 +3,8 @@ require_relative 'rotator'
 class Encryptor
   attr_reader :rotator, :message
 
-  def initialize(message = "", key = Key.new.generate_key, date = Date.new.last_four_of_squared_date)
+  #def initialize(message = "", key = Key.new.generate_key, date = Date.new.last_four_of_squared_date)
+   def initialize(message = "", key = Key.new.generate_key, date = Date.new.last_four_of_squared_date)
     @rotator  = Rotator.new(key, date)
     @message  = message
   end
@@ -26,14 +27,3 @@ class Encryptor
     (rotator.character_map.index(letter) + rotator.rotations[index]) % 39
   end
 end
-# instantiate new instance of rotator class
-# use its rotation methods and character map to do encryption
-
-# find index position of message-character on character-map (.index())
-# .index will return index position of letter from the message on character map
-# add rotation vlaue to that index position
-# find new value at that position
-
-
-# message will be passed into encryptor
-# then encryptor will be passed/instantiated in encrypt

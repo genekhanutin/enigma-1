@@ -55,4 +55,13 @@ class DecryptorTest < Minitest::Test
 
     assert_equal 'hello world 1', decryptor.decrypt_message
   end
+
+  def test_it_decrypts_longer_message
+    original_message = "dont tell anyone about this unless you want to attend turing for life"
+    encrypted_message = ".uci5z6agd2ctuc65g3dpzzicohzpta6nyznj0zl8tizouz2oz6c.dijmoc85ldg5r 7,"
+    key = "68262"
+    date = "041515"
+    decrypted_message = Decryptor.new(encrypted_message, key, date).decrypt_message
+    assert_equal original_message, decrypted_message
+  end
 end

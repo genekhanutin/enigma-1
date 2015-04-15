@@ -8,7 +8,7 @@ class Decrypt
   def run
     @decryptor.decrypt_message
     File.write(ARGV[1], @decryptor.decrypt_message)
-    puts "Created #{ARGV[1]} with key #{@decryptor.rotator.key} and date #{@decryptor.rotator.date}"
+    puts "Created #{ARGV[1]} with key #{@decryptor.rotator.key.join} and date #{@decryptor.rotator.date}"
   end
 end
 

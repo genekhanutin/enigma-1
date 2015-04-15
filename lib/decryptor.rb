@@ -1,10 +1,10 @@
 require_relative 'rotator'
 
 class Decryptor
-  attr_reader :rotator, :message
+  attr_reader :rotator, :message, :date
 
   def initialize(message = "", key, date)
-    @rotator  = Rotator.new(key, date)
+    @rotator  = Rotator.new(key.chars, date)
     @message  = message
   end
 
