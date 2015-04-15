@@ -2,7 +2,7 @@ require_relative 'decryptor'
 
 class Decrypt
   def initialize
-    @decryptor = Decryptor.new(File.read(ARGV[0]), File.read(ARGV[2]), File.read(ARGV[3]))
+    @decryptor = Decryptor.new(File.read(ARGV[0]), ARGV[2], ARGV[3])
   end
 
   def run
@@ -10,3 +10,5 @@ class Decrypt
     File.write(ARGV[1], @decryptor.decrypt_message)
   end
 end
+
+Decrypt.new.run
